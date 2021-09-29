@@ -20,12 +20,12 @@ public class DbHandler
         var playersCollection = _db.GetCollection<BsonDocument>("Players");
         var bsonPlayers = playersCollection.Find(new BsonDocument(filter)).ToList();
         var players = new List<Player>();
-        bsonPlayers.ForEach(bsonPlayer => players.Add(new Player
-        {
-            Id = bsonPlayer["_id"].AsObjectId,
-            RoomId = bsonPlayer["roomId"].AsString,
-            Position = new Position(bsonPlayer["position"]["x"].AsInt32, bsonPlayer["position"]["y"].AsInt32)
-        }));
+        bsonPlayers.ForEach(bsonPlayer => players.Add(new Player(
+
+            bsonPlayer["_id"].AsObjectId,
+            bsonPlayer["roomId"].AsString,
+            new Position(bsonPlayer["position"]["x"].AsInt32, bsonPlayer["position"]["y"].AsInt32)
+        )));
         return players;
     }
 
