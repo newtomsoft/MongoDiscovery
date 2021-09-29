@@ -1,8 +1,4 @@
-﻿using MongoDb.Classes;
-using MongoDB.Bson;
-using MongoDB.Driver;
-
-namespace MongoDb.ConnectionFactory;
+﻿namespace MongoDb.ConnectionFactory;
 public class DbHandler
 {
     private readonly IMongoDatabase _db;

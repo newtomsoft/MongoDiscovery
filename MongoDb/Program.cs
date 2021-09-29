@@ -1,8 +1,4 @@
-﻿using MongoDb.Classes;
-using MongoDb.ConnectionFactory;
-using MongoDB.Bson;
-
-namespace MongoDb;
+﻿namespace MongoDb;
 public class Program
 {
     static readonly DbHandler dbHandler = new();

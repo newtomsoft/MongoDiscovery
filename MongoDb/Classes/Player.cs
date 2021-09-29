@@ -1,7 +1,4 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-namespace MongoDb.Classes;
+﻿namespace MongoDb.Classes;
 public class Player
 {
     public Player(string roomId, Position position)
